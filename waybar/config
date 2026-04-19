@@ -1,0 +1,84 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 42,
+  "hide_on_fullscreen": true,
+  "spacing": 3,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "battery", "cpu", "memory", "pulseaudio", "custom/servicemanager", "custom/wallpaper", "custom/power"],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true
+  },
+  "persistent-workspaces": {
+    "*": 5 // This keeps 1-5 visible at all times
+},
+
+  "clock": {
+	  "format": "{:%H:%M}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+        "headphone": " ",
+        "headset": " ",
+        "phone": " ",
+        "portable": " ",
+        "car": " ",
+        "default": [" ", " "]
+    },
+    "on-click": "pavucontrol"
+},
+
+"memory": { 
+    "interval": 5,
+    "format": "  {}%",
+    "max-length": 10,
+    "on-click": "foot -e btop"
+},
+
+  "network": {
+      "format-wifi": "   {essid} ({signalStrength}%)",
+      "format-ethernet": "󰈀  Ethernet",
+      "format-disconnected": "⚠  Disconnected",
+      "on-click": "foot -e nmtui",
+      "tooltip": true,
+      "interval": 3
+    },
+
+  "cpu": {
+	  "format": "  {usage}%",
+	  "interval": 3
+  },
+
+  "battery": {
+	  "format": "󰁹 {capacity}%",
+	  "interval": 10
+  },
+
+  "custom/power": {
+	  "format": "⏻",
+	  "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/powermenu.fish"
+  },
+
+  "custom/servicemanager": {
+      "format": "󰹯",
+      "tooltipe": false,
+      "on-click": "foot -e python3 ~/service-management-suite/rsm"
+    },
+
+  "custom/wallpaper": {
+    "format": "󰸉 ",
+    "on-click": "~/.config/waybar/scripts/wall-change.fish",
+    "tooltip": false
+},
+
+ }

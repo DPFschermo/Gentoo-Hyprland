@@ -1,0 +1,78 @@
+
+
+#waybar {
+    background: transparent;
+}
+
+/* --- WORKSPACES --- */
+#workspaces button {
+    padding: 0 8px;
+    margin: 0 4px;
+    background: transparent;
+    color: @foreground;
+    opacity: 0.7; 
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: @background;
+    background-color: @color4;
+    border-radius: 10px;
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background: @foreground;
+    opacity: 0.2;
+}
+
+/* --- MODULES --- */
+#memory, #cpu, #battery, #network, #pulseaudio, #custom-servicemanager, #custom-wallpaper {
+    padding: 0 6px;
+    color: @foreground;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    /* Pywal colors + CC */
+    background: @background;
+    opacity: 1;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 15px; 
+    padding: 2px 10px;
+    margin: 5px 5px; 
+}
+
+#workspaces,
+#memory, 
+#cpu, 
+#battery, 
+#custom-servicemanager, /* Added comma */
+#network, 
+#pulseaudio,
+#custom-power {
+    margin: 0 4px;
+}
+
+/* Specifically fix the Power Button sizing and color */
+#custom-power {
+    color: @color1; /* Or pick a specific color like #bf616a */
+    font-size: 18px; /* Making it pop more */
+    padding-right: 5px;
+}
+
+/* Fix the hover logic */
+#custom-wallpaper:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#custom-servicemanager:hover,
+#memory:hover,
+#pulseaudio:hover,
+#custom-power:hover {
+    background: @color2;
+    color: @foreground;
+    border-radius: 10px;
+}

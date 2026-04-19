@@ -1,0 +1,38 @@
+/* 1. Import the dynamic colors */
+@import url("/home/fraggi/.cache/wal/colors-wofi.css");
+
+window {
+    margin: 0px;
+    /* We use a dark transparent grey so the blur actually has something to 'work' on */
+    background-color: rgba(30, 30, 30, 0.7); 
+    border: 2px solid @color4;  
+    border-radius: 10px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+#input {
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid @color4;
+    color: @foreground;
+    /* Semi-transparent input box */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#entry:selected {
+    /* Highlighting with your pywal color */
+    background-color: @color4;
+    border-radius: 5px;
+    outline: none;
+}
+
+#text {
+    margin: 5px;
+    color: @foreground;
+}
+
+#text:selected {
+    /* White text on the highlighted entry so it's readable */
+    color: #ffffff;
+    font-weight: bold;
+}

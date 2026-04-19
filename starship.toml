@@ -1,0 +1,29 @@
+# Use the nerd font symbols
+format = """
+[░▒▓](blue)\
+$os\
+$username\
+[](bg:surface0 fg:blue)\
+$directory\
+[](fg:surface0 bg:surface1)\
+$git_branch\
+$git_status\
+[](fg:surface1)\
+$character"""
+
+[username]
+show_always = true
+style_user = "bg:blue fg:black"
+format = '[$user]($style)'
+
+[directory]
+style = "bg:surface0 fg:white"
+format = "[ $path ]($style)"
+
+[os]
+disabled = false
+style = "bg:blue fg:black"
+
+[os.symbols]
+Void = " "
+Gentoo = " "
