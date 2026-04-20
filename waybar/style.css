@@ -33,6 +33,11 @@
     color: @foreground;
 }
 
+#clock {
+  background: @background;
+  color: #ffffff
+}
+
 .modules-left,
 .modules-center,
 .modules-right {
