@@ -72,7 +72,7 @@
   "custom/servicemanager": {
       "format": "󰹯",
       "tooltipe": false,
-      "on-click": "foot -e python3 ~/service-management-suite/rsm"
+      "on-click": "foot -e python3 /usr/bin/osm"
     },
 
   "custom/wallpaper": {
