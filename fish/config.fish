@@ -4,16 +4,17 @@ set -g fish_greeting ""
 ### --- PATH --- ###
 fish_add_path "$HOME/.local/bin"
 
-### --- PYWAL COLORS --- ###
+### --- PYWAL --- ###
+if test "$XDG_CURRENT_DESKTOP" = "Hyprland"
+    # This sets the variables ($color1, $color2, etc.)
+    if test -f "$HOME/.cache/wal/colors.fish"
+        source "$HOME/.cache/wal/colors.fish"
+    end
 
-# This sets the variables ($color1, $color2, etc.)
-if test -f "$HOME/.cache/wal/colors.fish"
-    source "$HOME/.cache/wal/colors.fish"
-end
-
-# This physically changes the terminal's colors
-if test -f "$HOME/.cache/wal/sequences"
-    cat "$HOME/.cache/wal/sequences"
+    # This physically changes the terminal's colors
+    if test -f "$HOME/.cache/wal/sequences"
+        cat "$HOME/.cache/wal/sequences"
+    end
 end
 
 ### --- ABBREVIATIONS & ALIASES --- ###
